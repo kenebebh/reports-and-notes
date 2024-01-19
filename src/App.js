@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import {
+  LoginPage,
+  RecordForm,
+  RecordList,
+  ReportForm,
+  ReportList,
+  NavBar,
+} from "./components";
+import Container from "./components/Container";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App relative">
+      <ToastContainer />
+      <NavBar />
+      <Container>
+        <Routes>
+          <Route path="/" element={<LoginPage />}></Route>
+          <Route path="/all-records" element={<RecordList />}></Route>
+          <Route path="/create-record" element={<RecordForm />}></Route>
+          <Route path="/edit-record/:id" element={<RecordForm />}></Route>
+          <Route path="/all-reports" element={<ReportList />}></Route>
+          <Route path="/create-report" element={<ReportForm />}></Route>
+          <Route path="/edit-report/:id" element={<ReportForm />}></Route>
+        </Routes>
+      </Container>
     </div>
   );
 }
