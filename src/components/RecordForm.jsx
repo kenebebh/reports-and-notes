@@ -175,7 +175,7 @@ export default function RecordForm() {
             <input
               id="crimeCode"
               name="crimeCode"
-              type="number"
+              type="text"
               value={inputValues?.crimeCode}
               onChange={handleInputChange}
               className="bg-white/90 border border-slate-400 rounded-sm px-1"

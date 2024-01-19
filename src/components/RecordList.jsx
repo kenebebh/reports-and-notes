@@ -13,19 +13,6 @@ export default function RecordList() {
 
   const [records, setRecords] = useState([]);
 
-  // delete record from LS
-  const deleteItem = (id) => {
-    const filteredRecords = records.filter((element, index) => {
-      return element.id !== id;
-    });
-    setRecords(filteredRecords);
-  };
-
-  // edit record from LS
-  const editItem = () => {
-    console.log("click edit");
-  };
-
   // saving data to local storage
   useEffect(() => {
     setRecords(getRecordsFromLS());
