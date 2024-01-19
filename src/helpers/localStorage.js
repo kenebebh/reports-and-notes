@@ -1,6 +1,46 @@
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+export const getReportsFromLS = () => {
+  if (typeof window !== "undefined") {
+    // Perform localStorage action
+    const data = localStorage.getItem("reports");
+    if (data) {
+      return JSON.parse(data);
+    } else {
+      return [];
+    }
+  }
+};
+
+export const addReport = (newReport) => {
+  let allReports = getReportsFromLS();
+  allReports.push({ id: new Date().getTime().toString(), ...newReport });
+  localStorage["reports"] = JSON.stringify(allReports);
+  toast("Report Successfully Added");
+};
+
+export const getReportById = (id) => {
+  const allReports = getReportsFromLS();
+  const reportToEdit = allReports.find((report) => report.id === id);
+  return reportToEdit;
+};
+
+export const editReport = (id, newReport) => {
+  let allReports = getReportsFromLS();
+  allReports = allReports.filter((report) => report.id !== id);
+  allReports.push(newReport);
+  localStorage["reports"] = JSON.stringify(allReports);
+  toast("Report Successfully Edited");
+};
+
+export const deleteReport = (id) => {
+  let allReports = getReportsFromLS();
+  allReports = allReports.filter((report) => report.id !== id);
+  localStorage["reports"] = JSON.stringify(allReports);
+  toast("Report Successfully Deleted");
+};
+
 export const getRecordsFromLS = () => {
   if (typeof window !== "undefined") {
     // Perform localStorage action
@@ -18,6 +58,7 @@ export const addRecord = (newRecord) => {
   allRecords.push({ id: new Date().getTime().toString(), ...newRecord });
   localStorage["records"] = JSON.stringify(allRecords);
   toast("Record Successfully Added");
+  // console.log(newRecord);
 };
 
 export const getRecordById = (id) => {

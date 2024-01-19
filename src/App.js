@@ -6,6 +6,7 @@ import {
   ReportForm,
   ReportList,
   NavBar,
+  RecordDetails,
 } from "./components";
 import Container from "./components/Container";
 import { ToastContainer, toast } from "react-toastify";
@@ -25,6 +26,7 @@ function App() {
           <Route path="/all-reports" element={<ReportList />}></Route>
           <Route path="/create-report" element={<ReportForm />}></Route>
           <Route path="/edit-report/:id" element={<ReportForm />}></Route>
+          <Route path="/record/:id" element={<RecordDetails />}></Route>
         </Routes>
       </Container>
     </div>

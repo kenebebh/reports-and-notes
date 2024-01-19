@@ -7,20 +7,6 @@ import React, {
 import { useNavigate } from "react-router-dom";
 import { getRecordsFromLS } from "../helpers/localStorage";
 import RecordItem from "./RecordItem";
-// import { View } from "@/components/view";
-
-// // getting the values of local storage
-// const getDatafromLS = () => {
-//   if (typeof window !== "undefined") {
-//     // Perform localStorage action
-//     const data = localStorage.getItem("records");
-//     if (data) {
-//       return JSON.parse(data);
-//     } else {
-//       return [];
-//     }
-//   }
-// };
 
 export default function RecordList() {
   const navigate = useNavigate();
@@ -46,15 +32,11 @@ export default function RecordList() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center pt-4 pb-6 gap-y-6">
+    <div className="flex flex-col items-center pt-4 pb-6 gap-y-6 min-w-[800px]">
       <h1 className="text-xl font-bold underline mb-4">Records Page</h1>
 
       {records && records.length > 0 && (
         <div className="w-full">
-          {/* <View data={records} deleteItem={deleteItem} editItem={editItem} /> */}
-          {/* {records.map((record) => {
-              <p>Record</p>;
-            })} */}
           {records.map((record) => (
             <RecordItem
               record={record}

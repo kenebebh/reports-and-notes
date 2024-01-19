@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import { useForm } from "../helpers/useForm";
@@ -7,10 +7,28 @@ import { addRecord, getRecordById, editRecord } from "../helpers/localStorage";
 export default function RecordForm() {
   const navigate = useNavigate();
   const { id } = useParams();
+  const [mediaPreview, setMediaPreview] = useState("");
+
+  const [thumbnail, setThumbnail] = useState("");
 
   const { inputValues, resetForm, handleInputChange, setForm } = useForm({
-    title: "",
-    recordText: "",
+    name: "",
+    picture: "",
+    address: "",
+    IdNo: "",
+    sex: "",
+    height: "",
+    weight: "",
+    crimeCode: "",
+    lga: "",
+    complexion: "",
+    occupation: "",
+    stateOfOrigin: "",
+    arrestDate: "",
+    arrestTime: "",
+    dateConvicted: "",
+    remarks: "",
+    officersInCharge: "",
   });
 
   const handleSubmit = (e) => {
@@ -27,7 +45,7 @@ export default function RecordForm() {
   }, [id]);
 
   return (
-    <div className="">
+    <div className="mb-12">
       <div className="flex flex-col gap-y-2">
         <button
           onClick={() => navigate("/all-records")}
@@ -48,30 +66,230 @@ export default function RecordForm() {
           onSubmit={handleSubmit}
         >
           <div className="flex flex-col w-full mb-3">
-            <label>Title</label>
+            <label>Name</label>
             <input
-              id="title"
-              name="title"
+              id="name"
+              name="name"
               type="text"
-              value={inputValues?.title}
+              value={inputValues?.name}
+              onChange={handleInputChange}
+              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              required
+            ></input>
+          </div>
+          <div className="space-y-4 w-full">
+            <h3 className="font-">Criminal's Picture</h3>
+
+            <div className="max-h-[300px] w-[300px] overflow-hidden">
+              <label
+                className="h-[220px] w-[200px] cursor-pointer overflow-hidden rounded-2xl"
+                htmlFor="picture"
+              >
+                {!mediaPreview ? (
+                  <div className="mx-auto rounded-2xl bg-slate-100 py-16 text-center">
+                    <p className="mt-5 text-slate-400">Add criminals picture</p>
+                  </div>
+                ) : (
+                  <img
+                    className="w-full object-cover object-center"
+                    src={mediaPreview}
+                  />
+                )}
+              </label>
+              <input
+                name="picture"
+                id="picture"
+                onChange={(e) => {
+                  e.target.files && setThumbnail(e.target.files[0]);
+                  setMediaPreview(
+                    e.target.files ? URL.createObjectURL(e.target.files[0]) : ""
+                  );
+                }}
+                className="hidden"
+                type="file"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col w-full mb-3">
+            <label>Address</label>
+            <input
+              id="address"
+              name="address"
+              type="text"
+              value={inputValues?.address}
+              onChange={handleInputChange}
+              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              required
+            ></input>
+          </div>
+          <div className="flex flex-col w-full mb-3">
+            <label>Identification Number</label>
+            <input
+              id="IdNo"
+              name="IdNo"
+              type="number"
+              value={inputValues?.IdNo}
+              onChange={handleInputChange}
+              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              required
+            ></input>
+          </div>
+          <div className="flex flex-col w-full mb-3">
+            <label>Sex</label>
+            <input
+              id="sex"
+              name="sex"
+              type="text"
+              value={inputValues?.sex}
+              onChange={handleInputChange}
+              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              required
+            ></input>
+          </div>
+          <div className="flex flex-col w-full mb-3">
+            <label>Height</label>
+            <input
+              id="height"
+              name="height"
+              type="number"
+              value={inputValues?.height}
+              onChange={handleInputChange}
+              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              required
+            ></input>
+          </div>
+          <div className="flex flex-col w-full mb-3">
+            <label>Weight</label>
+            <input
+              id="weight"
+              name="weight"
+              type="number"
+              value={inputValues?.weight}
+              onChange={handleInputChange}
+              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              required
+            ></input>
+          </div>
+          <div className="flex flex-col w-full mb-3">
+            <label>Crime Code</label>
+            <input
+              id="crimeCode"
+              name="crimeCode"
+              type="number"
+              value={inputValues?.crimeCode}
+              onChange={handleInputChange}
+              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              required
+            ></input>
+          </div>
+          <div className="flex flex-col w-full mb-3">
+            <label>LGA</label>
+            <input
+              id="lga"
+              name="lga"
+              type="text"
+              value={inputValues?.lga}
+              onChange={handleInputChange}
+              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              required
+            ></input>
+          </div>
+          <div className="flex flex-col w-full mb-3">
+            <label>Complexion</label>
+            <input
+              id="complexion"
+              name="complexion"
+              type="text"
+              value={inputValues?.complexion}
+              onChange={handleInputChange}
+              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              required
+            ></input>
+          </div>
+          <div className="flex flex-col w-full mb-3">
+            <label>Occupation</label>
+            <input
+              id="occupation"
+              name="occupation"
+              type="text"
+              value={inputValues?.occupation}
+              onChange={handleInputChange}
+              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              required
+            ></input>
+          </div>
+          <div className="flex flex-col w-full mb-3">
+            <label>State Of Origin</label>
+            <input
+              id="stateOfOrigin"
+              name="stateOfOrigin"
+              type="text"
+              value={inputValues?.stateOfOrigin}
+              onChange={handleInputChange}
+              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              required
+            ></input>
+          </div>
+          <div className="flex flex-col w-full mb-3">
+            <label>Arrest Date</label>
+            <input
+              id="arrestDate"
+              name="arrestDate"
+              type="text"
+              value={inputValues?.arrestDate}
+              onChange={handleInputChange}
+              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              required
+            ></input>
+          </div>{" "}
+          <div className="flex flex-col w-full mb-3">
+            <label>Arrest Time</label>
+            <input
+              id="arrestTime"
+              name="arrestTime"
+              type="text"
+              value={inputValues?.arrestTime}
+              onChange={handleInputChange}
+              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              required
+            ></input>
+          </div>
+          <div className="flex flex-col w-full mb-3">
+            <label>Date Convicted</label>
+            <input
+              id="dateConvicted"
+              name="dateConvicted"
+              type="text"
+              value={inputValues?.dateConvicted}
               onChange={handleInputChange}
               className="bg-transparent border border-slate-400 rounded-sm px-1"
               required
             ></input>
           </div>
           <div className="flex flex-col">
-            <label>Record</label>
+            <label>Remarks</label>
             <textarea
-              id="recordText"
-              name="recordText"
-              value={inputValues?.recordText}
+              id="remarks"
+              name="remarks"
+              value={inputValues?.remarks}
               onChange={handleInputChange}
               className="bg-transparent border border-slate-400 rounded-sm px-1"
               rows={4}
               cols={40}
             />
           </div>
-
+          <div className="flex flex-col w-full mb-3">
+            <label>Officers in Charge</label>
+            <input
+              id="officersInCharge"
+              name="officersInCharge"
+              type="text"
+              value={inputValues?.officersInCharge}
+              onChange={handleInputChange}
+              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              required
+            ></input>
+          </div>
           <br></br>
           <button
             type="submit"

@@ -6,6 +6,7 @@ import ReportList from "./ReportList";
 import NavBar from "./NavBar";
 import RecordItem from "./RecordItem";
 import ReportItem from "./ReportItem";
+import RecordDetails from "./RecordDetails";
 
 export {
   LoginPage,
@@ -16,4 +17,5 @@ export {
   NavBar,
   RecordItem,
   ReportItem,
+  RecordDetails,
 };

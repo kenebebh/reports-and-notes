@@ -34,7 +34,7 @@ export default function LoginPage() {
       </div>
       <button
         className="bg-blue-400 text-white uppercase font-semibold px-2 py-1 mt-12 rounded-sm shadow-sm hover:-translate-y-0.5 duration-100"
-        onClick={() => navigate("/home")}
+        onClick={() => navigate("/all-records")}
       >
         Login
       </button>
