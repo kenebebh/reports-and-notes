@@ -77,16 +77,16 @@ export default function RecordForm() {
               required
             ></input>
           </div>
-          <div className="space-y-4 w-full">
+          <div className="space-y-4 w-full mb-4">
             <h3 className="font-">Criminal's Picture</h3>
 
-            <div className="max-h-[300px] w-[300px] overflow-hidden">
+            <div className="max-h-[300px] overflow-hidden w-full">
               <label
                 className="h-[220px] w-[200px] cursor-pointer overflow-hidden rounded-2xl"
                 htmlFor="picture"
               >
                 {!mediaPreview ? (
-                  <div className="mx-auto rounded-2xl bg-slate-100 py-16 text-center">
+                  <div className="mx-auto rounded-2xl bg-slate-200 py-16 text-center">
                     <p className="mt-5 text-slate-400">Add criminals picture</p>
                   </div>
                 ) : (
@@ -266,7 +266,7 @@ export default function RecordForm() {
               required
             ></input>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col mb-3">
             <label>Remarks</label>
             <textarea
               id="remarks"
