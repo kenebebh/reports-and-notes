@@ -81,3 +81,9 @@ export const deleteRecord = (id) => {
   localStorage["records"] = JSON.stringify(allRecords);
   toast("Record Successfully Deleted");
 };
+
+// export const findRecord = (id) => {
+//   let allRecords = getRecordsFromLS();
+//   searchedRecords = allRecords.filter((record) => record.id === id);
+//   return searchedRecords
+// }
