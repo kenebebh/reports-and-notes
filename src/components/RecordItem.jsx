@@ -2,32 +2,11 @@ import React from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { getRecordsFromLS, deleteRecord } from "../helpers/localStorage";
-// import image1 from "/picture.jpeg";
 
 export default function RecordItem({ record, setRecords }) {
   const navigate = useNavigate();
 
-  const {
-    id,
-    IdNo,
-    OfficersInCharge,
-    address,
-    arrestDate,
-    arrestTime,
-    complexion,
-    crimeCode,
-    dateConvicted,
-    height,
-    lga,
-    name,
-    occupation,
-    officersInCharge,
-    picture,
-    remarks,
-    sex,
-    stateOfOrigin,
-    weight,
-  } = record;
+  const { id, name, remarks } = record;
 
   const removeRecord = () => {
     deleteRecord(id);
@@ -35,7 +14,7 @@ export default function RecordItem({ record, setRecords }) {
   };
 
   return (
-    <ul className="flex w-full justify-center bg-gray-200/50 px-3 py-2 border-y border-stone-300"  onClick={() => navigate(`/record/${id}`)}>
+    <ul className="flex w-full justify-center bg-gray-200/50 px-3 py-2 border-y border-stone-300">
       <div className="md:w-full lg:w-2/3 flex justify-between gap-12">
         <div className="flex gap-x-4">
           <div>
@@ -52,12 +31,18 @@ export default function RecordItem({ record, setRecords }) {
             <li className="">{remarks}</li>
           </div>
         </div>
-        <div className="flex gap-x-3">
+        <div className="flex gap-x-3 items-center justify-center">
           <button onClick={() => navigate(`/edit-record/${id}`)}>
             <FaEdit />
           </button>
           <button onClick={() => removeRecord()}>
             <FaTrash />
+          </button>
+          <button
+            onClick={() => navigate(`/record/${id}`)}
+            className="bg-slate-700 text-white font-semibold px-4 py-1 rounded-md shadow-md hover:-translate-y-0.5 duration-100"
+          >
+            View
           </button>
         </div>
       </div>
