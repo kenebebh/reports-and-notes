@@ -14,7 +14,7 @@ export default function ReportList() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center pt-4 pb-6 gap-y-6">
+    <div className="flex flex-col items-center pt-4 pb-6 gap-y-6 min-w-[800px]">
       <h1 className="text-xl font-bold underline mb-4">Reports Page</h1>
 
       {reports && reports.length > 0 && (

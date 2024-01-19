@@ -44,29 +44,29 @@ export default function ReportForm() {
       <div className="form-container mt-3">
         <form
           autoComplete="off"
-          className=" border border-slate-500 px-4 py-4 rounded-md flex flex-col justify-center items-center"
+          className=" border border-slate-300 px-4 py-4 rounded-md flex flex-col justify-center bg-stone-100 items-center"
           onSubmit={handleSubmit}
         >
           <div className="flex flex-col w-full mb-3">
-            <label>Title</label>
+            <label className="">Title</label>
             <input
               id="title"
               name="title"
               type="text"
               value={inputValues?.title}
               onChange={handleInputChange}
-              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              className="bg-white/90 border border-slate-400 rounded-sm px-1"
               required
             ></input>
           </div>
           <div className="flex flex-col">
-            <label>Report Text</label>
+            <label className="">Report Text</label>
             <textarea
               id="reportText"
               name="reportText"
               value={inputValues?.reportText}
               onChange={handleInputChange}
-              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              className="bg-white/90 border border-slate-400 rounded-sm px-1"
               rows={4}
               cols={40}
             />

@@ -62,7 +62,7 @@ export default function RecordForm() {
       <div className="form-container mt-3">
         <form
           autoComplete="off"
-          className=" border border-slate-500 px-4 py-4 rounded-md flex flex-col justify-center items-center"
+          className=" border border-slate-300 px-4 py-4 rounded-md flex flex-col justify-center bg-stone-100 items-center"
           onSubmit={handleSubmit}
         >
           <div className="flex flex-col w-full mb-3">
@@ -73,7 +73,7 @@ export default function RecordForm() {
               type="text"
               value={inputValues?.name}
               onChange={handleInputChange}
-              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              className="bg-white/90 border border-slate-400 rounded-sm px-1"
               required
             ></input>
           </div>
@@ -118,7 +118,7 @@ export default function RecordForm() {
               type="text"
               value={inputValues?.address}
               onChange={handleInputChange}
-              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              className="bg-white/90 border border-slate-400 rounded-sm px-1"
               required
             ></input>
           </div>
@@ -130,7 +130,7 @@ export default function RecordForm() {
               type="number"
               value={inputValues?.IdNo}
               onChange={handleInputChange}
-              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              className="bg-white/90 border border-slate-400 rounded-sm px-1"
               required
             ></input>
           </div>
@@ -142,7 +142,7 @@ export default function RecordForm() {
               type="text"
               value={inputValues?.sex}
               onChange={handleInputChange}
-              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              className="bg-white/90 border border-slate-400 rounded-sm px-1"
               required
             ></input>
           </div>
@@ -154,7 +154,7 @@ export default function RecordForm() {
               type="number"
               value={inputValues?.height}
               onChange={handleInputChange}
-              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              className="bg-white/90 border border-slate-400 rounded-sm px-1"
               required
             ></input>
           </div>
@@ -166,7 +166,7 @@ export default function RecordForm() {
               type="number"
               value={inputValues?.weight}
               onChange={handleInputChange}
-              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              className="bg-white/90 border border-slate-400 rounded-sm px-1"
               required
             ></input>
           </div>
@@ -178,7 +178,7 @@ export default function RecordForm() {
               type="number"
               value={inputValues?.crimeCode}
               onChange={handleInputChange}
-              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              className="bg-white/90 border border-slate-400 rounded-sm px-1"
               required
             ></input>
           </div>
@@ -190,7 +190,7 @@ export default function RecordForm() {
               type="text"
               value={inputValues?.lga}
               onChange={handleInputChange}
-              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              className="bg-white/90 border border-slate-400 rounded-sm px-1"
               required
             ></input>
           </div>
@@ -202,7 +202,7 @@ export default function RecordForm() {
               type="text"
               value={inputValues?.complexion}
               onChange={handleInputChange}
-              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              className="bg-white/90 border border-slate-400 rounded-sm px-1"
               required
             ></input>
           </div>
@@ -214,7 +214,7 @@ export default function RecordForm() {
               type="text"
               value={inputValues?.occupation}
               onChange={handleInputChange}
-              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              className="bg-white/90 border border-slate-400 rounded-sm px-1"
               required
             ></input>
           </div>
@@ -226,7 +226,7 @@ export default function RecordForm() {
               type="text"
               value={inputValues?.stateOfOrigin}
               onChange={handleInputChange}
-              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              className="bg-white/90 border border-slate-400 rounded-sm px-1"
               required
             ></input>
           </div>
@@ -238,7 +238,7 @@ export default function RecordForm() {
               type="text"
               value={inputValues?.arrestDate}
               onChange={handleInputChange}
-              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              className="bg-white/90 border border-slate-400 rounded-sm px-1"
               required
             ></input>
           </div>{" "}
@@ -250,7 +250,7 @@ export default function RecordForm() {
               type="text"
               value={inputValues?.arrestTime}
               onChange={handleInputChange}
-              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              className="bg-white/90 border border-slate-400 rounded-sm px-1"
               required
             ></input>
           </div>
@@ -262,7 +262,7 @@ export default function RecordForm() {
               type="text"
               value={inputValues?.dateConvicted}
               onChange={handleInputChange}
-              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              className="bg-white/90 border border-slate-400 rounded-sm px-1"
               required
             ></input>
           </div>
@@ -273,7 +273,7 @@ export default function RecordForm() {
               name="remarks"
               value={inputValues?.remarks}
               onChange={handleInputChange}
-              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              className="bg-white/90 border border-slate-400 rounded-sm px-1"
               rows={4}
               cols={40}
             />
@@ -286,7 +286,7 @@ export default function RecordForm() {
               type="text"
               value={inputValues?.officersInCharge}
               onChange={handleInputChange}
-              className="bg-transparent border border-slate-400 rounded-sm px-1"
+              className="bg-white/90 border border-slate-400 rounded-sm px-1"
               required
             ></input>
           </div>
