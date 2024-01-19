@@ -91,7 +91,7 @@ export default function RecordForm() {
                   </div>
                 ) : (
                   <img
-                    className="w-full object-cover object-center"
+                    className="max-w-[400px] object-cover object-center"
                     src={mediaPreview}
                   />
                 )}
